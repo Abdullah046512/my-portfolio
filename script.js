@@ -67,7 +67,7 @@
 
   /* ---------- Typing effect ---------- */
   var typedEl = document.getElementById("typed");
-  var phrases = ["Aspiring Cybersecurity Analyst", "Networking \u2022 Linux \u2022 Python"];
+  var phrases = ["Aspiring Cybersecurity Analyst", "Networking \u2022 Linux \u2022 Security"];
   var pIndex = 0;
   var cIndex = 0;
   var deleting = false;
