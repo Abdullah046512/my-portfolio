@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Case study: a deepfake audio detection system built with Python, Librosa and scikit-learn — from audio preprocessing and feature extraction to model evaluation." />
+  <meta name="theme-color" content="#0a0e14" />
+  <title>Deepfake Audio Detection — Case Study | Abdullah Bashir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="case-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header site-header--solid" id="siteHeader">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+        </span>
+        <span class="brand-text">Abdullah<span class="brand-dot">.</span>Bashir</span>
+      </a>
+
+      <div class="case-nav">
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="index.html#contact" class="btn btn-sm btn-ghost">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="container">
+        <a class="back-link" href="index.html">
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to portfolio
+        </a>
+
+        <p class="eyebrow">Case study</p>
+        <h1 class="case-title">Deepfake Audio Detection</h1>
+        <p class="case-lead">
+          A complete pipeline that turns raw audio into meaningful features and
+          classifies it as authentic human speech or AI-generated audio.
+        </p>
+
+        <dl class="case-meta">
+          <div>
+            <dt>Role</dt>
+            <dd>Solo project</dd>
+          </div>
+          <div>
+            <dt>Category</dt>
+            <dd>Audio security</dd>
+          </div>
+          <div>
+            <dt>Stack</dt>
+            <dd>Python, Librosa</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>Completed</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section case-section">
+      <div class="container">
+        <div class="case-grid">
+          <div class="case-main">
+            <div class="case-block" data-reveal>
+              <h2>Overview</h2>
+              <p>
+                Deepfake audio detection is a binary classification problem: given a short
+                audio clip, decide whether it is a real human recording or a synthetic voice
+                produced by a text-to-speech or voice-cloning system. I built the full
+                pipeline end to end — from loading and cleaning audio to extracting
+                features and evaluating a supervised model.
+              </p>
+              <p>
+                The project was as much about understanding the data as it was about the
+                model. Audio is noisy, variable in length and easy to preprocess
+                inconsistently, so most of the engineering effort went into a clean,
+                repeatable feature pipeline.
+              </p>
+            </div>
+
+            <div class="case-block" data-reveal>
+              <h2>The problem</h2>
+              <p>
+                Modern voice cloning tools make it increasingly easy to produce convincing
+                fake audio. A reliable detector needs to generalise beyond the samples it
+                was trained on, and it must be evaluated in a way that reflects real risk —
+                a fake clip labelled as real is far more costly than the reverse.
+              </p>
+            </div>
+
+            <div class="case-block" data-reveal>
+              <h2>Approach</h2>
+              <ul class="case-list">
+                <li>Assembled a balanced set of authentic and synthetic audio samples for training and evaluation.</li>
+                <li>Normalised and trimmed clips, then extracted features with Librosa — MFCCs, chroma, spectral contrast, zero-crossing rate and RMS energy.</li>
+                <li>Trained a supervised classifier with scikit-learn and tuned it using cross-validation.</li>
+                <li>Evaluated with accuracy, precision, recall and F1 score, paying close attention to false negatives.</li>
+              </ul>
+
+              <div class="case-pipeline" aria-label="Detection pipeline">
+                <div class="pipe-step">
+                  <span class="pipe-num">01</span>
+                  <strong>Audio input</strong>
+                  <span class="pipe-sub">Real / synthetic clips</span>
+                </div>
+                <div class="pipe-step">
+                  <span class="pipe-num">02</span>
+                  <strong>Preprocessing</strong>
+                  <span class="pipe-sub">Trim &amp; normalise</span>
+                </div>
+                <div class="pipe-step">
+                  <span class="pipe-num">03</span>
+                  <strong>Feature extraction</strong>
+                  <span class="pipe-sub">MFCC &amp; spectral</span>
+                </div>
+                <div class="pipe-step">
+                  <span class="pipe-num">04</span>
+                  <strong>Classification</strong>
+                  <span class="pipe-sub">Supervised model</span>
+                </div>
+                <div class="pipe-step">
+                  <span class="pipe-num">05</span>
+                  <strong>Verdict</strong>
+                  <span class="pipe-sub">Authentic / fake</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-block" data-reveal>
+              <h2>Results</h2>
+              <p>
+                The final model separated authentic and synthetic samples on a held-out
+                evaluation set. I tracked accuracy alongside precision, recall and F1,
+                treating false negatives as the most important error to reduce.
+              </p>
+              <!-- Replace the placeholder values below with your measured metrics,
+                   e.g. 94.2%, 0.93, 0.91, 0.92 -->
+              <div class="metric-grid">
+                <div class="metric">
+                  <span class="metric-value">—</span>
+                  <span class="metric-label">Accuracy</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-value">—</span>
+                  <span class="metric-label">Precision</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-value">—</span>
+                  <span class="metric-label">Recall</span>
+                </div>
+                <div class="metric">
+                  <span class="metric-value">—</span>
+                  <span class="metric-label">F1 score</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="case-block" data-reveal>
+              <h2>What I learned</h2>
+              <ul class="case-list">
+                <li>Feature engineering dominates — how audio is represented matters as much as the classifier itself.</li>
+                <li>Accuracy alone hides class imbalance; precision and recall tell the real story.</li>
+                <li>Consistent preprocessing prevents silent bugs that are hard to trace later.</li>
+                <li>Documenting each experiment made the results reproducible and easier to improve.</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="case-side" data-reveal>
+            <div class="case-facts">
+              <h2>Project details</h2>
+              <div class="fact">
+                <span class="fact-k">Role</span>
+                <span class="fact-v">Solo project</span>
+              </div>
+              <div class="fact">
+                <span class="fact-k">Category</span>
+                <span class="fact-v">Audio security</span>
+              </div>
+              <div class="fact">
+                <span class="fact-k">Stack</span>
+                <ul class="tags">
+                  <li>Python</li>
+                  <li>Librosa</li>
+                  <li>scikit-learn</li>
+                  <li>NumPy</li>
+                </ul>
+              </div>
+              <div class="fact">
+                <span class="fact-k">Status</span>
+                <span class="fact-v">Completed</span>
+              </div>
+              <div class="fact">
+                <span class="fact-k">Focus</span>
+                <span class="fact-v">Synthetic media detection</span>
+              </div>
+              <a class="btn btn-primary" href="https://github.com/Abdullah046512" target="_blank" rel="noopener noreferrer">
+                View my GitHub
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </a>
+              <a class="btn btn-ghost back-btn" href="index.html">Back to portfolio</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+        </span>
+        Abdullah Bashir
+      </div>
+      <p class="footer-note">All projects are personal work and are practised only on systems I own or am authorized to test.</p>
+      <p class="footer-copy">&copy; <span id="year">2026</span> Abdullah Bashir. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

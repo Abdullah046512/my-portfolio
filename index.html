@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Abdullah Bashir — Aspiring Cybersecurity Analyst. Learning networking, Linux and security by building small tools in my own lab." />
+  <meta name="description" content="Abdullah Bashir — early-career cybersecurity analyst focused on detection, networking and Linux. Building practical security tools with Python and machine learning." />
   <meta name="theme-color" content="#0a0e14" />
-  <title>Abdullah Bashir | Aspiring Cybersecurity Analyst</title>
+  <title>Abdullah Bashir | Cybersecurity Analyst &amp; Python Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -31,6 +31,7 @@
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="case-study.html" class="nav-link">Case study</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
         <li><a href="#contact" class="btn btn-sm btn-primary">Hire me</a></li>
       </ul>
@@ -41,6 +42,8 @@
     <!-- HERO -->
     <section class="hero" id="home">
       <div class="hero-bg" aria-hidden="true">
+        <!-- Background photo: Unsplash (Unsplash License) -->
+        <div class="hero-photo"></div>
         <span class="blob blob-1"></span>
         <span class="blob blob-2"></span>
         <span class="grid-overlay"></span>
@@ -50,7 +53,7 @@
         <div class="hero-content">
           <span class="status-pill" data-reveal>
             <span class="status-dot" aria-hidden="true"></span>
-            Open to learning opportunities
+            Open to entry-level cybersecurity roles
           </span>
 
           <h1 class="hero-title" data-reveal>Abdullah Bashir</h1>
@@ -60,14 +63,14 @@
           </p>
 
           <p class="hero-lead" data-reveal>
-            I am learning how computer networks behave and how to protect them.
-            I practise only on my own computer and my own lab — never on a network
-            that belongs to someone else.
+            I am an early-career cybersecurity analyst who learns by building. My work
+            focuses on detection, network fundamentals and Linux — including a machine
+            learning project that identifies AI-generated speech.
           </p>
 
           <div class="hero-actions" data-reveal>
             <a href="#projects" class="btn btn-primary">
-              View my projects
+              View my work
               <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
             <a href="#contact" class="btn btn-ghost">Get in touch</a>
@@ -100,10 +103,13 @@
             </div>
             <pre class="terminal-body"><code><span class="t-prompt">$</span> whoami
 <span class="t-out">Abdullah Bashir</span>
-<span class="t-prompt">$</span> cat focus.txt
-<span class="t-out">[ "cybersecurity", "networking", "linux" ]</span>
-<span class="t-prompt">$</span> ./study.sh --daily
-<span class="t-ok">[&#10003;] learning, one idea at a time...</span>
+<span class="t-prompt">$</span> cat profile.json
+<span class="t-out">{ "role": "cybersecurity analyst",</span>
+<span class="t-out">  "focus": ["detection", "networking", "linux"],</span>
+<span class="t-out">  "stack": ["python", "librosa", "scikit-learn"] }</span>
+<span class="t-prompt">$</span> ./run_detector.py --sample audio.wav
+<span class="t-ok">[&#10003;] extracting audio features...</span>
+<span class="t-ok">[&#10003;] verdict: authentic</span>
 <span class="t-prompt">$</span> <span class="t-cursor">&#9608;</span></code></pre>
           </div>
           <div class="terminal-glow" aria-hidden="true"></div>
@@ -145,14 +151,14 @@
               myself in my own lab.
             </p>
             <p>
-              My way of learning is simple: I study one idea, then I write a small
-              program to test it. That is how I got into networking, Linux and Python.
-              Right now I am focusing on three areas: <strong>cybersecurity</strong>,
+              My way of learning is simple: I study one idea, then I write a small program
+              to test it. That is how I got into networking, Linux and Python. Right now I
+              am focusing on three areas: <strong>cybersecurity</strong>,
               <strong>networking</strong> and <strong>Linux</strong>.
             </p>
             <p>
-              All of my practice happens on my own computer. I only ever test systems
-              I own or have explicit written permission to test.
+              All of my practice happens on my own computer. I only ever test systems I own
+              or have explicit written permission to test.
             </p>
           </div>
 
@@ -185,19 +191,28 @@
           <span class="section-index">02</span>
           <div>
             <p class="eyebrow">Skills</p>
-            <h2 class="section-title">What I am learning</h2>
-            <p class="section-lead">My current study areas, growing a little every day.</p>
+            <h2 class="section-title">Technical foundation</h2>
+            <p class="section-lead">Areas I am actively developing through hands-on projects.</p>
           </div>
         </div>
 
         <div class="card-grid">
           <article class="card skill-card" data-reveal>
             <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+            </div>
+            <h3>Cybersecurity Fundamentals</h3>
+            <p>Understanding vulnerabilities, how an attack works in theory, and how defenders detect and fix it.</p>
+            <p class="card-note">Studying: OWASP Top 10 and detection basics.</p>
+          </article>
+
+          <article class="card skill-card" data-reveal>
+            <div class="card-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"></circle><circle cx="5" cy="19" r="2.5"></circle><circle cx="19" cy="19" r="2.5"></circle><path d="M12 7.5v5M10 12l-4 5M14 12l4 5"></path></svg>
             </div>
             <h3>Networking</h3>
             <p>How data travels between computers using addresses, ports and the TCP and UDP protocols.</p>
-            <p class="card-note">Currently studying: subnetting and DNS.</p>
+            <p class="card-note">Studying: subnetting and DNS.</p>
           </article>
 
           <article class="card skill-card" data-reveal>
@@ -206,16 +221,16 @@
             </div>
             <h3>Linux</h3>
             <p>Navigating the file system, using the command line, and understanding permissions and services.</p>
-            <p class="card-note">Currently studying: CLI and file permissions.</p>
+            <p class="card-note">Studying: CLI and file permissions.</p>
           </article>
 
           <article class="card skill-card" data-reveal>
             <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
             </div>
-            <h3>Ethical Hacking Fundamentals</h3>
-            <p>Understanding vulnerabilities, how an attack works in theory, and how defenders detect and fix it.</p>
-            <p class="card-note">Currently studying: OWASP Top 10 basics.</p>
+            <h3>Python</h3>
+            <p>Writing scripts for automation, network tasks and data processing, with clean, readable structure.</p>
+            <p class="card-note">Applied in: scripting and project tooling.</p>
           </article>
 
           <article class="card skill-card" data-reveal>
@@ -223,8 +238,8 @@
               <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"></line><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg>
             </div>
             <h3>Git &amp; GitHub</h3>
-            <p>Making commits, branching and pushing projects to GitHub so my work is version-controlled and shareable.</p>
-            <p class="card-note">Currently studying: branches and pull requests.</p>
+            <p>Version-controlling projects with commits and branches so my work is shareable and reproducible.</p>
+            <p class="card-note">Studying: branches and pull requests.</p>
           </article>
         </div>
       </div>
@@ -237,62 +252,61 @@
           <span class="section-index">03</span>
           <div>
             <p class="eyebrow">Projects</p>
-            <h2 class="section-title">Things I am building</h2>
-            <p class="section-lead">Small programs I write to understand how networks actually behave. All of them run on my own computer only.</p>
+            <h2 class="section-title">Featured project</h2>
+            <p class="section-lead">One project, documented end to end — from raw audio to a working detector.</p>
           </div>
         </div>
 
-        <div class="card-grid">
-          <article class="card project-card" data-reveal>
+        <a class="featured-project" href="case-study.html" data-reveal aria-label="Open the Deepfake Audio Detection case study">
+          <div class="featured-copy">
             <div class="project-top">
-              <span class="project-num">P/01</span>
-              <span class="badge">In progress</span>
+              <span class="case-label">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h11l5 5v11H4z"></path><path d="M15 4v5h5"></path><path d="M8 13h8M8 17h5"></path></svg>
+                Case Study
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+              </span>
+              <span class="badge badge-done">Completed</span>
             </div>
-            <h3>Python Network Scanner</h3>
-            <p>A Python script that checks which ports are open on my own computer. I use the socket library to try to connect to each port one by one, and it tells me which ones answered.</p>
-            <ul class="tags">
-              <li>Python</li>
-              <li>Sockets</li>
-              <li>Port scanning</li>
-            </ul>
-            <p class="card-note">Runs against my own machine only.</p>
-          </article>
+            <h3>Deepfake Audio Detection</h3>
+            <p>
+              A machine learning system that separates authentic human speech from
+              AI-generated audio using Librosa feature extraction and a supervised
+              classifier — evaluated end to end.
+            </p>
 
-          <article class="card project-card" data-reveal>
-            <div class="project-top">
-              <span class="project-num">P/02</span>
-              <span class="badge">In progress</span>
-            </div>
-            <h3>Network Information Tool</h3>
-            <p>A small utility that collects information about my own machine's network — its hostname and which network interfaces are currently active.</p>
-            <ul class="tags">
+            <ul class="tags" aria-label="Built with">
               <li>Python</li>
-              <li>OS modules</li>
-              <li>Networking</li>
+              <li>Librosa</li>
+              <li>scikit-learn</li>
+              <li>NumPy</li>
             </ul>
-            <p class="card-note">Collects information about my own computer only.</p>
-          </article>
+          </div>
 
-          <article class="card project-card" data-reveal>
-            <div class="project-top">
-              <span class="project-num">P/03</span>
-              <span class="badge">In progress</span>
+          <div class="featured-visual" aria-hidden="true">
+            <div class="wave-card">
+              <div class="wave-card-top">
+                <span class="wave-status"><i></i>model output</span>
+                <span class="wave-tag">audio analysis</span>
+              </div>
+              <div class="waveform">
+                <span style="--h: 24%"></span><span style="--h: 58%"></span><span style="--h: 38%"></span><span style="--h: 82%"></span><span style="--h: 46%"></span><span style="--h: 68%"></span><span style="--h: 30%"></span><span style="--h: 90%"></span><span style="--h: 52%"></span><span style="--h: 74%"></span><span style="--h: 34%"></span><span style="--h: 62%"></span><span style="--h: 44%"></span><span style="--h: 86%"></span><span style="--h: 28%"></span><span style="--h: 66%"></span><span style="--h: 50%"></span><span style="--h: 78%"></span><span style="--h: 36%"></span><span style="--h: 56%"></span><span style="--h: 22%"></span><span style="--h: 70%"></span><span style="--h: 42%"></span><span style="--h: 60%"></span>
+              </div>
+              <div class="wave-verdict">
+                <span class="verdict-label">Verdict</span>
+                <span class="verdict-value">Authentic</span>
+              </div>
+              <div class="wave-legend">
+                <span><i class="lg-real"></i>Authentic</span>
+                <span><i class="lg-fake"></i>Synthetic</span>
+              </div>
             </div>
-            <h3>Cybersecurity Lab Practice</h3>
-            <p>A self-built practice lab where I keep recreating small security problems — weak passwords, open services and misconfigured settings — and then learning how to fix them.</p>
-            <ul class="tags">
-              <li>Linux</li>
-              <li>Hardening</li>
-              <li>Documentation</li>
-            </ul>
-            <p class="card-note">Isolated lab on my own machine. Nothing external is tested.</p>
-          </article>
-        </div>
+          </div>
+        </a>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section section-alt" id="contact">
+    <section class="section" id="contact">
       <div class="container contact-wrap">
         <div class="section-head" data-reveal>
           <span class="section-index">04</span>
@@ -336,7 +350,7 @@
         </span>
         Abdullah Bashir
       </div>
-      <p class="footer-note">All projects shown are personal work-in-progress and are practised only on systems I own.</p>
+      <p class="footer-note">All projects are personal work and are practised only on systems I own or am authorized to test.</p>
       <p class="footer-copy">&copy; <span id="year">2026</span> Abdullah Bashir. All rights reserved.</p>
     </div>
   </footer>

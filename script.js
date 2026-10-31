@@ -17,19 +17,21 @@
   var toggle = document.getElementById("navToggle");
   var menu = document.getElementById("navMenu");
 
-  toggle.addEventListener("click", function () {
-    var open = menu.classList.toggle("open");
-    toggle.classList.toggle("open", open);
-    toggle.setAttribute("aria-expanded", String(open));
-  });
+  if (toggle && menu) {
+    toggle.addEventListener("click", function () {
+      var open = menu.classList.toggle("open");
+      toggle.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", String(open));
+    });
 
-  menu.addEventListener("click", function (e) {
-    if (e.target.closest("a")) {
-      menu.classList.remove("open");
-      toggle.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-    }
-  });
+    menu.addEventListener("click", function (e) {
+      if (e.target.closest("a")) {
+        menu.classList.remove("open");
+        toggle.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
 
   /* ---------- Back to top ---------- */
   toTop.addEventListener("click", function () {
@@ -67,7 +69,11 @@
 
   /* ---------- Typing effect ---------- */
   var typedEl = document.getElementById("typed");
-  var phrases = ["Aspiring Cybersecurity Analyst", "Networking \u2022 Linux \u2022 Security"];
+  var phrases = [
+    "Cybersecurity Analyst \u2014 Detection & Python",
+    "Python \u2022 Machine Learning \u2022 Linux",
+    "Building detection tools, one project at a time"
+  ];
   var pIndex = 0;
   var cIndex = 0;
   var deleting = false;
