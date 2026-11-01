@@ -1071,6 +1071,58 @@ svg { display: block; }
   border-radius: 7px;
 }
 
+/* ============ CV ============ */
+.cv-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 36px;
+  overflow: hidden;
+  background:
+    radial-gradient(420px 220px at 100% 0%, rgba(52, 224, 161, 0.06), transparent 70%),
+    var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 24px 60px -40px rgba(0, 0, 0, 0.9);
+}
+.cv-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.cv-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+  color: var(--accent);
+  background: rgba(52, 224, 161, 0.08);
+  border: 1px solid rgba(52, 224, 161, 0.2);
+}
+.cv-badge {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 1.4px;
+  color: var(--accent);
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(52, 224, 161, 0.08);
+  border: 1px solid rgba(52, 224, 161, 0.22);
+}
+.cv-card h3 { font-size: 1.3rem; margin: 22px 0 12px; }
+.cv-card > p { color: var(--text-dim); font-size: 0.96rem; }
+.cv-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.cv-actions .btn { flex: 1 1 160px; }
+
 /* ============ Contact ============ */
 .contact-wrap { max-width: 780px; }
 .contact-links {
@@ -1242,6 +1294,8 @@ svg { display: block; }
   .strip-inner { grid-template-columns: 1fr; }
   .strip-item { border-right: 0; border-bottom: 1px solid var(--border-soft); }
   .strip-item:last-child { border-bottom: 0; }
+  .cv-card { padding: 24px; }
+  .cv-actions .btn { flex-basis: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
